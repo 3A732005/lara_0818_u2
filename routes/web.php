@@ -23,6 +23,10 @@ use App\Http\Controllers\HomeController;
 //    return view('home.index');
 //});
 
-Route::get('hello/{name?}',['as'=>'hello.index','uses'=>'HelloConroller@index']);
+//舊語法
+//Route::get('hello/{name?}',['as'=>'hello.index','uses'=>'HelloConroller@index']);
+Route::get('hello/{name?}', [HelloController::class, 'index']);
 
-Route::get('home',['as'=>'home.index','uses'=>'HomeConroller@index']);
+//舊語法
+//Route::get('home',['as'=>'home.index','uses'=>'HomeConroller@index']);
+Route::get('home', [HomeController::class, 'index']);
